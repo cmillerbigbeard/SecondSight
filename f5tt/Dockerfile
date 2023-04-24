@@ -18,13 +18,13 @@ ADD https://raw.githubusercontent.com/cmillerbigbeard/SecondSight/main/f5tt/f5tt
 ADD https://raw.githubusercontent.com/cmillerbigbeard/SecondSight/main/f5tt/utils.py /utils.py
 ADD https://raw.githubusercontent.com/cmillerbigbeard/SecondSight/main/f5tt/startup.sh /startup.sh
 
-RUN chmod +x /f5ttfs.py
-RUN chmod +x /app.py
-RUN chmod +x /nms.py
-RUN chmod +x /bigiq.py
-RUN chmod +x /cveDB.py
-RUN chmod +x /f5ttCH.py
-RUN chmod +x /utils.py
+RUN chmod 755 /f5ttfs.py
+RUN chmod 755 /app.py
+RUN chmod 755 /nms.py
+RUN chmod 755 /bigiq.py
+RUN chmod 755 /cveDB.py
+RUN chmod 755 /f5ttCH.py
+RUN chmod 755 /utils.py
 RUN chmod 755 /startup.sh
 
 #EXPOSE 5000

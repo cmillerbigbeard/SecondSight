@@ -27,4 +27,4 @@ RUN chmod +x /f5ttCH.py
 RUN chmod +x /utils.py
 RUN chmod +x /startup.sh
 
-CMD ./startup.sh
+ENTRYPOINT [ "executable" ] ./startup.sh

@@ -18,14 +18,13 @@ ADD https://raw.githubusercontent.com/cmillerbigbeard/SecondSight/main/f5tt/f5tt
 ADD https://raw.githubusercontent.com/cmillerbigbeard/SecondSight/main/f5tt/utils.py /utils.py
 ADD https://raw.githubusercontent.com/cmillerbigbeard/SecondSight/main/f5tt/startup.sh /startup.sh
 
-RUN chmod +x f5ttfs.py
-RUN chmod +x app.py
-RUN chmod +x nms.py
-RUN chmod +x bigiq.py
-RUN chmod +x cveDB.py
-RUN chmod +x f5ttCH.py
-RUN chmod +x utils.py
-RUN chmod +x startup.sh
-
+RUN chmod +x /f5ttfs.py
+RUN chmod +x /app.py
+RUN chmod +x /nms.py
+RUN chmod +x /bigiq.py
+RUN chmod +x /cveDB.py
+RUN chmod +x /f5ttCH.py
+RUN chmod +x /utils.py
+RUN chmod +x /startup.sh
 
 CMD ./startup.sh

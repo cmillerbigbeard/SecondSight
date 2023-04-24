@@ -25,6 +25,7 @@ RUN chmod +x /bigiq.py
 RUN chmod +x /cveDB.py
 RUN chmod +x /f5ttCH.py
 RUN chmod +x /utils.py
-RUN chmod +x /startup.sh
+RUN chmod 755 /startup.sh
 
+#EXPOSE 5000
 CMD ["/bin/bash", "/startup.sh"]

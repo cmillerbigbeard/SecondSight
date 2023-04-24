@@ -7,7 +7,7 @@ RUN apt-get update && \
         apt-get install -y -q build-essential python3-pip python3-dev python3-simplejson git nano curl iputils-ping tcpdump dnsutils && \
         pip3 install fastapi uvicorn requests clickhouse-driver python-dateutil flask && \
         mkdir deployment
-WORKDIR /deployment
+#WORKDIR /deployment
 
 ADD ./f5tt/f5ttfs.py /f5ttfs.py
 ADD ./f5tt/app.py /app.py

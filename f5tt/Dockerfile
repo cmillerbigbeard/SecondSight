@@ -11,16 +11,3 @@ RUN apt-get update && \
         mkdir deployment
 
 WORKDIR /deployment
-
-COPY f5ttfs.py .
-COPY app.py .
-COPY nms.py .
-COPY bigiq.py .
-COPY cveDB.py .
-COPY f5ttCH.py .
-COPY utils.py .
-COPY startup.sh .
-
-RUN chmod +x startup.sh
-
-CMD ./startup.sh

@@ -12,14 +12,14 @@ RUN apt-get update && \
 
 WORKDIR /deployment
 
-COPY f5ttfs.py .
-COPY app.py .
-COPY nms.py .
-COPY bigiq.py .
-COPY cveDB.py .
-COPY f5ttCH.py .
-COPY utils.py .
-COPY startup.sh .
+COPY https://raw.githubusercontent.com/cmillerbigbeard/SecondSight/main/f5tt/f5ttfs.py .
+COPY https://raw.githubusercontent.com/cmillerbigbeard/SecondSight/main/f5tt/app.py .
+COPY https://raw.githubusercontent.com/cmillerbigbeard/SecondSight/main/f5tt/nms.py .
+COPY https://raw.githubusercontent.com/cmillerbigbeard/SecondSight/main/f5tt/bigiq.py .
+COPY https://raw.githubusercontent.com/cmillerbigbeard/SecondSight/main/f5tt/cveDB.py .
+COPY https://raw.githubusercontent.com/cmillerbigbeard/SecondSight/main/f5tt/f5ttCH.py .
+COPY https://raw.githubusercontent.com/cmillerbigbeard/SecondSight/main/f5tt/utils.py .
+COPY https://raw.githubusercontent.com/cmillerbigbeard/SecondSight/main/f5tt/startup.sh .
 
 RUN chmod +x startup.sh
 

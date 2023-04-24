@@ -27,5 +27,5 @@ RUN chmod 755 /f5ttCH.py
 RUN chmod 755 /utils.py
 RUN chmod 755 /startup.sh
 
-#EXPOSE 5000
+EXPOSE 5000
 CMD ["/bin/bash", "/startup.sh"]

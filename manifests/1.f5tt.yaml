@@ -82,7 +82,7 @@ spec:
           #- name: STATS_PUSH_MODE
           #  value: PUSHGATEWAY
           #- name: STATS_PUSH_URL
-          #  value: "http://pushgateway.nginx.ff.lan"
+          #  value: "http://pushgateway.f5tt.miller.com"
           #- name: STATS_PUSH_INTERVAL
           #  value: "10"
 
@@ -152,7 +152,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: f5tt.ff.lan
+    - host: f5tt.miller.com
       http:
         paths:
           - path: /

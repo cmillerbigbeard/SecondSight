@@ -42,15 +42,53 @@ kind: PersistentVolumeClaim
 metadata:
   name: pvc-prometheus
   namespace: f5tt
-  annotations:
-    nfs.io/storage-path: prometheus
 spec:
   accessModes:
     - ReadWriteMany
   resources:
     requests:
-      storage: 150Gi
-
+      storage: 10Gi
+  volumeName: pvc-prometheus
+  storageClassName: storage-class-xc-ce
+  selector:
+    matchLabels: 
+      storage-name: pvc-prometheus
+  volumeMode: Filesystem
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pvc-prometheus
+  labels:
+    kubernetes.io/hostname: cmiller-sno
+    storage-name: pvc-prometheus
+    storage.openshift.com/local-volume-owner-name: local-volume-xc
+    storage.openshift.com/local-volume-owner-namespace: openshift-local-storage
+    storage.openshift.com/owner-kind: LocalVolume
+    storage.openshift.com/owner-name: local-volume-xc
+    storage.openshift.com/owner-namespace: openshift-local-storage
+  annotations:
+    pv.kubernetes.io/bound-by-controller: 'yes'
+    storage.openshift.com/device-name: sdb
+spec:
+  capacity:
+    storage: 10Gi
+  local:
+    path: /mnt/local-storage/storage-class-xc-ce
+    fsType: xfs
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Delete
+  storageClassName: storage-class-xc-ce
+  volumeMode: Filesystem
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - cmiller-sno
 ---
 apiVersion: apps/v1
 kind: Deployment

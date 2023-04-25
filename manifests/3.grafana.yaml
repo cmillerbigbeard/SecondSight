@@ -7,8 +7,8 @@ data:
   grafana.ini: |-
     [paths]
     [server]
-    domain = grafana.f5tt.ff.lan
-    root_url = https://grafana.f5tt.ff.lan
+    domain = grafana.f5tt.miller.com
+    root_url = https://grafana.f5tt.miller.com
     [database]
     [session]
     [dataproxy]
@@ -41,7 +41,7 @@ data:
     #host = smtp-server-fqdn:25
     #user = user@domain
     #password = thepassword
-    #from_address = grafana@f5tt.ff.lan
+    #from_address = grafana@f5tt.miller.com
     #from_name = Grafana
     [emails]
     [log]
@@ -156,14 +156,14 @@ metadata:
     nginx.org/proxy-connect-timeout: "30s"
     nginx.org/proxy-read-timeout: "20s"
     nginx.org/client-max-body-size: "4m"
-    nginx.com/health-checks: "true"
+    #nginx.com/health-checks: "true"
   labels:
     app: grafana
     tier: frontend
 spec:
   ingressClassName: nginx
   rules:
-    - host: grafana.f5tt.ff.lan
+    - host: grafana.f5tt.miller.com
       http:
         paths:
           - path: /
